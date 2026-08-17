@@ -1,0 +1,10 @@
+<a class="project-card" href="{{ project.url | relative_url }}">
+  <div class="card-top">
+    <span class="tag status-{{ project.status | downcase | replace: ' ', '-' }}">{{ project.status }}</span>
+    {% if project.priority %}<span class="muted">{{ project.priority }}</span>{% endif %}
+  </div>
+  <p class="eyebrow">{{ project.category }}</p>
+  <h3>{{ project.title }}</h3>
+  <p>{{ project.summary }}</p>
+  <div class="card-meta"><span>Lead: {{ project.lead }}</span><span>Target: {{ project.target_date }}</span></div>
+</a>

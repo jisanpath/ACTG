@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<div class="detail-header">
+  <a class="back-link" href="{{ '/people/' | relative_url }}">← All team members</a>
+  <p class="eyebrow">{{ page.role }}</p>
+  <h1>{{ page.name }}</h1>
+  <p class="lead">{{ page.bio }}</p>
+</div>
+<div class="detail-grid">
+  <article class="content-card">
+    <h2>Research interests</h2>
+    <ul class="clean-list">
+      {% for item in page.interests %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+    {{ content }}
+  </article>
+  <aside class="sidebar-card">
+    <h3>Profile</h3>
+    {% if page.email %}<p><strong>Email</strong><br>{{ page.email }}</p>{% endif %}
+    {% if page.orcid %}<p><strong>ORCID</strong><br><a href="{{ page.orcid }}">View ORCID</a></p>{% endif %}
+    {% if page.scholar %}<p><strong>Google Scholar</strong><br><a href="{{ page.scholar }}">View profile</a></p>{% endif %}
+  </aside>
+</div>

@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<div class="detail-header">
+  <a class="back-link" href="{{ '/projects/' | relative_url }}">← All projects</a>
+  <p class="eyebrow">{{ page.category }}</p>
+  <h1>{{ page.title }}</h1>
+  <p class="lead">{{ page.summary }}</p>
+  <div class="tag-row">
+    <span class="tag status-{{ page.status | downcase | replace: ' ', '-' }}">{{ page.status }}</span>
+    {% if page.priority %}<span class="tag">{{ page.priority }} priority</span>{% endif %}
+  </div>
+</div>
+
+<div class="detail-grid">
+  <article class="content-card">
+    <h2>Project overview</h2>
+    {{ content }}
+  </article>
+  <aside class="sidebar-card">
+    <h3>Project information</h3>
+    <dl>
+      <dt>Project lead</dt><dd>{{ page.lead }}</dd>
+      <dt>Start date</dt><dd>{{ page.start_date }}</dd>
+      <dt>Target date</dt><dd>{{ page.target_date }}</dd>
+      <dt>Status</dt><dd>{{ page.status }}</dd>
+      <dt>Team</dt><dd>{{ page.team }}</dd>
+    </dl>
+  </aside>
+</div>
