@@ -1,0 +1,29 @@
+title: "Research Team"
+description: "Research, people, projects, publications, and deadlines"
+url: ""
+baseurl: ""
+
+markdown: kramdown
+theme: null
+plugins:
+  - jekyll-seo-tag
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+  people:
+    output: true
+    permalink: /people/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: project
+  - scope:
+      path: ""
+      type: "people"
+    values:
+      layout: person
